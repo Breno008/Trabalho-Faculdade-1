@@ -1,97 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel de Jogos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel — GameVault</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Gerenciador de Jogos</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="painel.html">Painel</a>
-    </nav>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo">🎮 GameVault</a>
+      <nav>
+        <a href="index.html">Catálogo</a>
+        <a href="painel.html" class="active">Painel</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Cadastrar jogo</h2>
+  <main class="container panel">
+    <h1>Gerenciador de Jogos</h1>
+    <p class="muted">Cadastre, atualize e remova jogos</p>
 
-      <form>
-        <label>Nome do jogo:</label>
-        <input type="text" placeholder="Digite o nome">
-
-        <label>Gênero:</label>
-        <input type="text" placeholder="Digite o gênero">
-
-        <label>Plataforma:</label>
-        <input type="text" placeholder="Digite a plataforma">
-
-        <label>Nota:</label>
-        <input type="number" placeholder="Ex: 9.5">
-       
-        <button type="submit">Cadastrar</button>
+    <section class="card-form">
+      <h2 id="form-title">Cadastrar Jogo</h2>
+      <form id="form-jogo">
+        <input type="hidden" id="jogo-id" />
+        <div class="row">
+          <label>Título<input type="text" id="titulo" required /></label>
+          <label>Plataforma<input type="text" id="plataforma" /></label>
+        </div>
+        <div class="row">
+          <label>Gênero<input type="text" id="genero" /></label>
+          <label>Ano<input type="number" id="ano" /></label>
+          <label>Nota<input type="number" step="0.1" id="nota" /></label>
+        </div>
+        <label>Descrição<textarea rows="3" id="descricao"></textarea></label>
+        <div class="actions">
+          <button type="submit" class="btn-primary" id="btn-salvar">Salvar</button>
+          <button type="button" class="btn-ghost" id="btn-cancelar">Cancelar</button>
+        </div>
       </form>
     </section>
 
-    <section>
+    <section class="card-form">
       <h2>Jogos cadastrados</h2>
-
-      <table>
-        <tr>
-          <th>Nome</th>
-          <th>Gênero</th>
-          <th>Plataforma</th>
-          <th>Nota</th>
-          <th>Ações</th>
-        </tr>
-        <tr>
-          <td>Minecraft</td>
-          <td>Sandbox</td>
-          <td>PC / Console / Mobile</td>
-          <td>9.5</td>
-          <td>
-            <button>Editar</button>
-            <button>Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Free Fire</td>
-          <td>Battle Royale</td>
-          <td>Mobile</td>
-          <td>6.0</td>
-          <td>
-              <button>Editar</button>
-              <button>Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <td>EA FC 26</td>
-          <td>Esporte</td>
-          <td>PC / Console</td>
-          <td>8.0</td>
-          <td>
-            <button>Editar</button>
-            <button>Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <td>GTA V</td>
-          <td>Ação</td>
-          <td>PC / Console</td>
-          <td>9.0</td>
-          <td>
-            <button>Editar</button>
-            <button>Excluir</button>
-          </td>
-        </tr>
-        <tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Título</th><th>Plataforma</th><th>Gênero</th>
+            <th>Ano</th><th>Nota</th><th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-jogos">
+          <tr><td colspan="6" class="muted">Carregando...</td></tr>
+        </tbody>
       </table>
     </section>
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 GameVault</p>
+    </div>
+  </footer>
+
+  <script src="painel.js"></script>
 </body>
 </html>
