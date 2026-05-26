@@ -1,58 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site de Jogos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVault — Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo">🎮 GameVault</a>
+      <nav>
+        <a href="index.html" class="active">Catálogo</a>
+        <a href="painel.html">Painel</a>
+      </nav>
+    </div>
+  </header>
 
-  <header class="header-home">
-  <h1>Catálogo de Jogos</h1> 
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="painel.html">Painel</a>
-  </nav>
-</header>
+  <section class="hero">
+    <div class="container">
+      <h1>Sua coleção de jogos em um só lugar</h1>
+    </div>
+  </section>
 
-  <main>
-    <section>
-      <h2>Jogos em destaque</h2>
-
-      <div class="jogo">
-        <img src="minecraft.jpg" alt="Minecraft" class="img-jogo">
-        <h3>Minecraft</h3>
-        <p>Gênero: Aventura / Sandbox</p>
-        <p>Plataforma: PC, Console e Mobile</p>
-        <p>Nota: ⭐⭐⭐⭐⭐ (9.5)</p>
-      </div>
-
-      <div class="jogo">
-        <img src="freefire.jpg" alt="Free Fire" class="img-jogo">
-        <h3>Free Fire</h3>
-        <p>Gênero: Battle Royale</p>
-        <p>Plataforma: Mobile</p>
-        <p>Nota: ⭐⭐⭐☆☆ (6.0)</p>
-      </div>
-
-      <div class="jogo">
-       <img src="fc26.jpg" alt="EA Sports FC 26" class="img-jogo">
-        <h3>EA FC 26</h3>
-        <p>Gênero: Esporte</p>
-        <p>Plataforma: PC e Console</p>
-        <p>Nota: ⭐⭐⭐⭐☆ (8.0)</p>
-      </div>
-
-      <div class="jogo">
-        <img src="gta.jpg" alt="GTA V" class="img-jogo">
-        <h3>GTA V</h3>
-        <p>Gênero: Ação</p>
-        <p>Plataforma: PC e Console</p>
-        <p>Nota: ⭐⭐⭐⭐⭐ (9.0)</p>
-      </div>
-    </section>
+  <main class="container">
+    <h2 class="section-title">Jogos no catálogo</h2>
+    <div id="lista" class="grid">
+      <p class="muted">Carregando jogos...</p>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 GameVault</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
   
-</body> 
+</body>
 </html>
